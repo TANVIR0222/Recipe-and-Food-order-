@@ -1,11 +1,12 @@
-import CatagoryWarpper from "../CatagoryWarpper/CatagoryWarpper";
 import Hero from "../Hero/Hero";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
+
     return (
         <div>
             <Hero></Hero>
-            <CatagoryWarpper></CatagoryWarpper>
+            <Banner></Banner>
         </div>
     );
 };
