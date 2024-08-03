@@ -3,7 +3,7 @@ import { Button } from "flowbite-react";
 const Banner = () => {
   return (
     <div>
-      <div className="grid gap-8 md:grid-cols-2 text-left mx-4 items-center justify-center">
+      <div className="grid gap-8 md:grid-cols-2 text-left mx-4 md:w-full items-center justify-center">
         <div className="">
         {/* <h1 className="bg-white w-fit rounded -mt-3">Featured Recipe</h1> */}
           <img 
