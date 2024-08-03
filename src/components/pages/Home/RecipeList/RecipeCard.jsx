@@ -16,7 +16,7 @@ const RecipeCard = ({ items }) => {
             {name}
           </h5>
           <div className="flex items-center justify-between">
-            <h4>{category}</h4>
+            <h4 className="bg-yellow-100 w-fit p-2 rounded-md">{category}</h4>
             <p className="flex items-center gap-3">
               <FaRegClock /> 30 minutes
             </p>

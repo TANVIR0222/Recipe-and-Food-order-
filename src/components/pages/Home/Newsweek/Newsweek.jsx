@@ -1,7 +1,7 @@
 
 const Newsweek = () => {
   return (
-    <div className="text-center  my-52">
+    <div className="text-center  my-20">
       <div>
         <h1 className="text-xl md:text-3xl my-8 text-black">Sing up for my weekly newsletter!</h1>
         <p className="text-gray-500 my-4">
