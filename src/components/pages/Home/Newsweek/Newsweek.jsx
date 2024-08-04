@@ -25,7 +25,7 @@ const Newsweek = () => {
             required
             color="gray"
           />
-          <button className="bg-blue-600 text-white p-5 rounded-md">Get Started</button>
+          <button className="bg-blue-600 border-black border-2 text-white p-5 rounded-md">Get Started</button>
         </div>
         
       </div>

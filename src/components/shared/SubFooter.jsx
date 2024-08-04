@@ -5,8 +5,8 @@ const SubFooter = () => {
     <div className="my-1">
       <Footer container>
         <div className="">
-          <h1 className="text-xl md:text-4xl ">subscribe to our newlatters,</h1>
-          <p className="text-sm leading-7 text-gray-600">
+          <h1 className="text-xl md:text-4xl capitalize ">subscribe to our newlatters,</h1>
+          <p className="text-sm my-3 leading-7 text-gray-600">
             Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing
             velit quis. <br /> Duis tempor incididunt dolore.
           </p>
@@ -22,7 +22,7 @@ const SubFooter = () => {
                 color="gray"
               />
               <button className="bg-blue-600 md:ml-3 text-white p-5 rounded-md">
-                Get Started
+              Subscribe
               </button>
             </div>
           </div>

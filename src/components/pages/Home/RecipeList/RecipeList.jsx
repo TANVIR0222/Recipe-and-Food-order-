@@ -20,7 +20,7 @@ const RecipeList = () => {
           <RecipeCard key={items} items={items}></RecipeCard>
         ))}
       </div>
-      <Button className="mx-auto border-black border-2" color="purple">
+      <Button className="mx-auto border-black  md:my-6 z-10 border-2" color="purple">
         View All Reacipe
       </Button>
     </div>
