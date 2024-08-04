@@ -1,9 +1,10 @@
 import { Button } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
     <div>
-        {/* main footer */}
+      {/* main footer */}
       <div className="grid gap-8 md:grid-cols-2 text-left mx-4 md:w-full items-center justify-center">
         <div className="">
           {/* <h1 className="bg-white w-fit rounded -mt-3">Featured Recipe</h1> */}
@@ -14,7 +15,9 @@ const AboutSection = () => {
           />
         </div>
         <div className="">
-          <h1 className="text-xl md:text-4xl leading-7 md:leading-relaxed">Vegan foodie who lovers experiment with recipe</h1>
+          <h1 className="text-xl md:text-4xl leading-7 md:leading-relaxed">
+            Vegan foodie who lovers experiment with recipe
+          </h1>
           <p className="leading-6 truncate text-wrap md:leading-8 my-2 text-left">
             Lorem ipsum dolor sit amet consectetur. Mauris at in luctus faucibus
             at fermentum velit duis amet. Dolor vitae porta ac eget consequat a
@@ -22,9 +25,11 @@ const AboutSection = () => {
             commodo adipiscing est magna mi nullam sit. Tellus sagittis urna et
             mauris amet odio at non.
           </p>
-          <Button className="my-5" color="blue">
-            View Recipe
-          </Button>
+          <Link to={"/recipe"}>
+            <Button className="my-5" color="blue">
+              View Recipe
+            </Button>
+          </Link>
         </div>
       </div>
 
