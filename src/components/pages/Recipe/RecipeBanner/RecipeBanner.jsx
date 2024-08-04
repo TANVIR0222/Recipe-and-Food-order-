@@ -2,8 +2,7 @@
 const RecipeBanner = () => {
     return (
         <div>
-            <img className=" w-full" src="mainbanner.jpg" alt="banner" />
-            tanvir
+            <img className="w-full mb-20" src="mainbanner.jpg" alt="banner" />
         </div>
     );
 };

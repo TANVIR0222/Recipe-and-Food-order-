@@ -3,8 +3,8 @@ import {
   } from "react-router-dom";
 import MainRoute from "../Main/MainRoute";
 import Home from "../components/pages/Home/Home/Home";
-import CategoryPage from "../components/pages/Home/CatagoryWarpper/CategoryPage";
 import RecipeHome from "../components/pages/Recipe/RecipeHome/RecipeHome";
+import FoodOrder from "../components/pages/Order/FoodOrder/FoodOrder";
 
 export const router = createBrowserRouter([
     {
@@ -16,14 +16,13 @@ export const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-          path: "/categories/:category",
-          element:<CategoryPage></CategoryPage>
-        },
-        {
           path: "/recipe",
           element:<RecipeHome></RecipeHome>
         },
-        
+        {
+          path:'/order',
+          element:<FoodOrder></FoodOrder>
+        }
       ]
     },
   ]);

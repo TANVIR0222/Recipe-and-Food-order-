@@ -33,7 +33,6 @@ const RecipeTabs = () => {
   const Sides = menu.filter((item) => item.category === "Sides");
   const Drinks = menu.filter((item) => item.category === "Drinks");
 
-  console.log(Breakfast);
   return (
     <div>
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
