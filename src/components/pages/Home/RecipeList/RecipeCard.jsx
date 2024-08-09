@@ -1,13 +1,13 @@
 import {  Card } from "flowbite-react";
-import { FaRegClock } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const RecipeCard = ({ items }) => {
-  const { thumbnail_image, name, category } = items;
+  const { _id,thumbnail_image, name, category } = items;
   return (
     <>
       <div>
         <Card
-          className="mx-2 my-2 md:my-10"
+          className="mx-2 my-2 md:my-10 hover:shadow-xl hover:shadow-blue-600"
           renderImage={() => (
             <img width={500} height={500} src={thumbnail_image} alt="image 1" />
           )}
@@ -17,9 +17,9 @@ const RecipeCard = ({ items }) => {
           </h5>
           <div className="flex items-center justify-between">
             <h4 className="bg-yellow-100 w-fit p-2 rounded-md">{category}</h4>
-            <p className="flex items-center gap-3">
-              <FaRegClock /> 30 minutes
-            </p>
+            <Link to={`/checkout/${_id}`} >
+            <button className="bg-[#EECAD5] px-2 py-2 rounded hover:rounded-full">View now</button>
+            </Link>
           </div>
         </Card>
       </div>

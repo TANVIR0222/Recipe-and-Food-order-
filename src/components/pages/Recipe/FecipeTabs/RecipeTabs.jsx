@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import RecipeCard from "../../Home/RecipeList/RecipeCard";
-import useMenu from "../../../../Hooks/useMenu";
+import useMenu from "../../../../Hooks/useRecipe";
 import { useParams } from "react-router-dom";
 
 const RecipeTabs = () => {
