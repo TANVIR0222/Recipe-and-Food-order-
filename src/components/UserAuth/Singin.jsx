@@ -1,11 +1,15 @@
 import { Button, Label, TextInput } from "flowbite-react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Singin = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { singin } = useContext(AuthContext);
+  const from = location.state?.from?.pathname || "/";
+
   const handleSingin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,12 +20,13 @@ const Singin = () => {
         const user = result.user;
         console.log(user);
         Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 1500
-          });
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.error(err);
