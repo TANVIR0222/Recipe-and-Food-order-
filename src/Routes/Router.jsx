@@ -6,8 +6,9 @@ import Home from "../components/pages/Home/Home/Home";
 import RecipeHome from "../components/pages/Recipe/RecipeHome/RecipeHome";
 import FoodOrder from "../components/pages/Order/FoodOrder/FoodOrder";
 import Viewpage from "../components/pages/Home/viewPage/Viewpage";
-import SingIn from "../components/auth/singIn";
-import SingUp from "../components/auth/singUp";
+import Singup from "../components/UserAuth/Singup";
+import Singin from "../components/UserAuth/Singin";
+
 
 export const router = createBrowserRouter([
     {
@@ -33,11 +34,11 @@ export const router = createBrowserRouter([
         },
         {
           path:'/singin',
-          element:<SingIn></SingIn>
+          element:<Singin></Singin>
         },
         {
           path:'/singup',
-          element:<SingUp></SingUp>
+          element:<Singup></Singup>
         }
       ]
     },
