@@ -1,4 +1,4 @@
-import { Button, Navbar } from "flowbite-react";
+import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
@@ -20,17 +20,44 @@ const Header = () => {
         <Navbar.Brand href="/">
           <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
         </Navbar.Brand>
-          <div className="flex md:order-2">
+          {/* <div className="flex md:order-2">
           {
             user? <>
-            <Button onClick={handleLogout}>LogOut</Button>
+            <span className="text-center items-center justify-center flex" >{user?.displayName}</span>
+           
             </>:
             <>
-            <Link to={'/singin'} ><Button>Log in</Button></Link>
+            
             </>
           }
           <Navbar.Toggle />
-        </div>
+        </div> */}
+        <div className="flex md:order-2">
+        {
+          user? <>
+          <Dropdown
+          arrowIcon={false}
+          inline
+          label={
+            <Avatar alt="User settings" img={user?.photoURL} rounded />
+          }
+        >
+          <Dropdown.Header>
+            <span className="block text-sm">{user?.displayName}</span>
+            <span className="block text-sm">{user?.email}</span>
+          </Dropdown.Header>
+          <Dropdown.Item>Dashboard</Dropdown.Item>
+          <Dropdown.Item>Settings</Dropdown.Item>
+          <Dropdown.Item>Earnings</Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Item> <Button onClick={handleLogout}>Log Out</Button></Dropdown.Item>
+        </Dropdown>
+        <Navbar.Toggle />
+          </> : <>
+          <Link to={'/singin'} ><Button>Log in</Button></Link>
+          </>
+        }
+      </div>
         <Navbar.Collapse>
           <Navbar.Link className="text-md  uppercase" active={usePath == "/"} as={"div"}>
             <Link to="/">Home</Link>
