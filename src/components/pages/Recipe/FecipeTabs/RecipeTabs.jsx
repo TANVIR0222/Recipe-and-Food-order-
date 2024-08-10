@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import RecipeCard from "../../Home/RecipeList/RecipeCard";
-import useMenu from "../../../../Hooks/useRecipe";
 import { useParams } from "react-router-dom";
+import useRecipe from "../../../../Hooks/useRecipe";
 
 const RecipeTabs = () => {
   // const [menu, setMenu] = useState([]);
@@ -25,7 +25,7 @@ const RecipeTabs = () => {
     setValue(newValue);
   };
 
-  const [menu] = useMenu();
+  const [menu] = useRecipe();
   const Entrees = menu.filter((item) => item.category === "Entrees");
   const Breakfast = menu.filter((item) => item.category === "Breakfast");
   const Lunch = menu.filter((item) => item.category === "Lunch");
@@ -37,11 +37,11 @@ const RecipeTabs = () => {
     <div>
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
         <Tabs value={value} onChange={handleChange} centered>
-          <Tab value={0} label="salad" />
-          <Tab value={1} label="soup" />
-          <Tab value={2} label="dessert" />
-          <Tab value={3} label="pizza" />
-          <Tab value={4} label="drinks" />
+          <Tab value={0} label="Entrees" />
+          <Tab value={1} label="Desserts" />
+          <Tab value={2} label="Lunch" />
+          <Tab value={3} label="Breakfast" />
+          <Tab value={4} label="Sides" />
           <Tab value={5} label="drinks" />
         </Tabs>
       </Box>
