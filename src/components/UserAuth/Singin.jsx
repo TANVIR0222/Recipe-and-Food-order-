@@ -2,6 +2,7 @@ import { Button, Label, TextInput } from "flowbite-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Singin = () => {
   const { singin } = useContext(AuthContext);
@@ -14,8 +15,15 @@ const Singin = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
       })
-      .error((err) => {
+      .catch((err) => {
         console.error(err);
       });
   };
