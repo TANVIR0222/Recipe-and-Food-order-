@@ -1,16 +1,34 @@
 import { Button, Navbar } from "flowbite-react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
   const usePath = useLocation().pathname;
+  const {user,logout} = useContext(AuthContext);
+
+  const handleLogout = () =>{
+    logout()
+    .then(()=> {})
+    .catch((err) => {
+      console.log(err);
+    })
+  }
   return (
     <div className="">
       <Navbar fluid rounded className="bg-slate-200 z-10">
         <Navbar.Brand href="/">
           <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
         </Navbar.Brand>
-        <div className="flex md:order-2">
-          <Link to={'/singin'} ><Button>Log in</Button></Link>
+          <div className="flex md:order-2">
+          {
+            user? <>
+            <Button onClick={handleLogout}>LogOut</Button>
+            </>:
+            <>
+            <Link to={'/singin'} ><Button>Log in</Button></Link>
+            </>
+          }
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
