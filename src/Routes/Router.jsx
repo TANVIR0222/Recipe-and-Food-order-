@@ -6,6 +6,8 @@ import Home from "../components/pages/Home/Home/Home";
 import RecipeHome from "../components/pages/Recipe/RecipeHome/RecipeHome";
 import FoodOrder from "../components/pages/Order/FoodOrder/FoodOrder";
 import Viewpage from "../components/pages/Home/viewPage/Viewpage";
+import SingIn from "../components/auth/singIn";
+import SingUp from "../components/auth/singUp";
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
           path:'/checkout/:id',
           element: <Viewpage></Viewpage>,
           loader:({params}) => fetch(`http://localhost:3000/ordermenu/${params.id}`)
+        },
+        {
+          path:'/singin',
+          element:<SingIn></SingIn>
+        },
+        {
+          path:'/singup',
+          element:<SingUp></SingUp>
         }
       ]
     },
