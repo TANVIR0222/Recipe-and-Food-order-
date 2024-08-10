@@ -4,7 +4,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { Spinner } from "flowbite-react";
 
 const PrivetRoute = ({children}) => {
-    const locations = useLocation();
+    const location = useLocation();
     const {user,loading} = useContext(AuthContext);
 
     if(loading){
