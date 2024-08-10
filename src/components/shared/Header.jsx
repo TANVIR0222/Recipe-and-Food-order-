@@ -10,7 +10,7 @@ const Header = () => {
           <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
         </Navbar.Brand>
         <div className="flex md:order-2">
-          <Button>Log in</Button>
+          <Link to={'/singin'} ><Button>Log in</Button></Link>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
