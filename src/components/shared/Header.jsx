@@ -6,8 +6,13 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
+import useCarts from "../../Hooks/useCarts";
 
 const Header = () => {
+
+
+  const [carts] = useCarts();
+
   const usePath = useLocation().pathname;
   const {user,logout} = useContext(AuthContext);
 
@@ -28,31 +33,21 @@ const Header = () => {
   }));
   return (
     <div className="">
-      <Navbar fluid rounded className="bg-slate-200 z-10">
+      <Navbar fluid rounded className="bg-slate-100 z-10">
         <Navbar.Brand href="/">
           <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
         </Navbar.Brand>
-          {/* <div className="flex md:order-2">
-          {
-            user? <>
-            <span className="text-center items-center justify-center flex" >{user?.displayName}</span>
-           
-            </>:
-            <>
-            
-            </>
-          }
-          <Navbar.Toggle />
-        </div> */}
         <div className="flex md:order-2">
         {
           user? <>
           <div className="flex items-center mr-8 md:mr-16 justify-center">
+          <Link to={'/dashboard/cart'} >
           <IconButton aria-label="cart">
-            <StyledBadge badgeContent={`10`} color="secondary" >
+            <StyledBadge badgeContent={`${carts.length}`} color="secondary" >
               <ShoppingCartIcon color="red"   />
             </StyledBadge>
           </IconButton>
+          </Link>
           </div>
 
           <Dropdown
