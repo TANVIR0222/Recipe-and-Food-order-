@@ -4,14 +4,17 @@ import Header from "../components/shared/Header";
 import SubFooter from "../components/shared/SubFooter";
 
 const MainRoute = () => {
-  const hiddenHeader = useLocation().pathname.includes("singin");
-  const hiddenFooter = useLocation().pathname.includes("singup");
+  const location = useLocation();
+  const hiddenHeader =
+    location.pathname.includes("singin") ||
+    location.pathname.includes("singup");
+
   return (
     <div>
-      {hiddenFooter ||hiddenHeader || <Header></Header>}
+      {hiddenHeader || <Header></Header>}
       <Outlet></Outlet>
-      {hiddenFooter || hiddenHeader || <SubFooter></SubFooter>}
-      {hiddenFooter || hiddenHeader || <Footers></Footers>}
+      {hiddenHeader || <SubFooter></SubFooter>}
+      {hiddenHeader || <Footers></Footers>}
     </div>
   );
 };
