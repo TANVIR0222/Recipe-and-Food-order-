@@ -8,6 +8,8 @@ import FoodOrder from "../components/pages/Order/FoodOrder/FoodOrder";
 import Viewpage from "../components/pages/Home/viewPage/Viewpage";
 import Singup from "../components/UserAuth/Singup";
 import Singin from "../components/UserAuth/Singin";
+import Dashboard from "../Main/Dashboard";
+import Cart from "../components/pages/Dashboard/cart/Cart";
 
 
 export const router = createBrowserRouter([
@@ -42,4 +44,14 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'cart',
+          element:<Cart></Cart>,
+        },
+      ]
+    }
   ]);
