@@ -61,9 +61,10 @@ const Header = () => {
             <span className="block text-sm">{user?.displayName}</span>
             <span className="block text-sm">{user?.email}</span>
           </Dropdown.Header>
+          <Link to={'/dashboard/cart'} >
           <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
+          </Link>
+          
           <Dropdown.Divider />
           <Dropdown.Item> <Button onClick={handleLogout}>Log Out</Button></Dropdown.Item>
         </Dropdown>
