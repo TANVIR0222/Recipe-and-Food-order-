@@ -4,10 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocilLogin from "../shared/SocilLogin";
 
 const Singup = () => {
   const navigate = useNavigate();
   const { createUser, updateUseProfile } = useContext(AuthContext);
+
+  const axiosPublic = useAxiosPublic();
 
   // react formik
   const {
@@ -20,26 +24,31 @@ const Singup = () => {
   console.log(watch("example")); // watch input value by passing the name of it
 
   const onSubmit = (data) => {
-    console.log(data);
     createUser(data.email, data.password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
         updateUseProfile(data.name, data.photoURL).then(() => {
-          console.log("user profile update");
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "user create successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          reset();
-          navigate("/");
+          // create user and send data database 
+          const userInfo ={
+            name: data.name,
+            email: data.email,
+            photoURL: data.photoURL,
+          }
+          axiosPublic.post('/users',userInfo)
+          .then((res) => {
+            console.log(res.data);
+            if(res.data.insertedId){
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "user create successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              reset();
+              navigate("/");
+            }
+          })
         });
-        console.log(data.photoURL);
-        // reset();
-        // navigate('/')
       })
       .catch((err) => {
         console.log(err);
@@ -78,7 +87,6 @@ const Singup = () => {
               type="text"
               {...register("photoURL", { required: true })}
               placeholder="Photo URL"
-              className="input input-bordered"
             />
             {errors.photoURL?.type === "required" && (
               <p className=" text-red-700" role="alert">
@@ -146,7 +154,8 @@ const Singup = () => {
             Singin
           </Button>
         </form>
-
+        {/* socile login */}
+        <SocilLogin></SocilLogin>
         <div>
           <p className="text-center text-gray-500 mt-4">
             Already have an account?{" "}
@@ -155,7 +164,6 @@ const Singup = () => {
             </span>{" "}
           </p>
         </div>
-        {/* {error && <p className="text-red-500 text-center mt-5">{error}</p>} */}
       </div>
     </div>
   );

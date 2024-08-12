@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocilLogin from "../shared/SocilLogin";
 
 const Singin = () => {
   const location = useLocation();
@@ -60,7 +61,6 @@ const Singin = () => {
                 type="password"
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
                 required
               />
             </div>
@@ -69,7 +69,8 @@ const Singin = () => {
               Singin
             </Button>
           </form>
-
+          {/* socail login  */}
+          <SocilLogin></SocilLogin>
           <div>
             <p className="text-center text-gray-500 mt-4">
               Already have an account?{" "}
