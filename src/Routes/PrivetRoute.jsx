@@ -8,7 +8,7 @@ const PrivetRoute = ({children}) => {
     const {user,loading} = useContext(AuthContext);
 
     if(loading){
-        return <Spinner color="pink" aria-label="Pink spinner example" />
+        return <Spinner  className="mx-auto  flex mt-20" color="pink" aria-label="Pink spinner example" />
     }
 
     if(user){ 
