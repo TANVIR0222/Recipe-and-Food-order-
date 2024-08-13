@@ -10,6 +10,10 @@ import Singup from "../components/UserAuth/Singup";
 import Singin from "../components/UserAuth/Singin";
 import Dashboard from "../Main/Dashboard";
 import Cart from "../components/pages/Dashboard/cart/Cart";
+import Allusers from "../components/pages/Dashboard/AllUsers/Allusers";
+import PrivetRoute from "./PrivetRoute";
+import Additem from "../components/pages/Dashboard/AddItem/Additem";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
@@ -46,12 +50,23 @@ export const router = createBrowserRouter([
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
       children:[
+        // user route
         {
           path:'cart',
           element:<Cart></Cart>,
         },
+
+        // admin Route
+        {
+          path:'users',
+          element:<AdminRoute><Allusers></Allusers></AdminRoute>,
+        },
+        {
+          path:'additem',
+          element:<AdminRoute><Additem></Additem></AdminRoute>,
+        }
       ]
     }
   ]);
