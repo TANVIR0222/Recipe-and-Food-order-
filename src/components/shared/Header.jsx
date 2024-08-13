@@ -61,7 +61,7 @@ const Header = () => {
             <span className="block text-sm">{user?.displayName}</span>
             <span className="block text-sm">{user?.email}</span>
           </Dropdown.Header>
-          <Link to={'/dashboard/cart'} >
+          <Link to={'/dashboard'} >
           <Dropdown.Item>Dashboard</Dropdown.Item>
           </Link>
           
