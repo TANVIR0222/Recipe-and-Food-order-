@@ -17,11 +17,9 @@ const Singup = () => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
-  console.log(watch("example")); // watch input value by passing the name of it
 
   const onSubmit = (data) => {
     createUser(data.email, data.password)
