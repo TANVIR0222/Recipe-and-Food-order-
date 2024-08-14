@@ -1,5 +1,4 @@
-import { Button } from "@mui/material";
-import { TextInput, Label, Select, Textarea, Spinner } from "flowbite-react";
+import { TextInput, Label, Select, Textarea } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
@@ -54,7 +53,7 @@ const Additem = () => {
 
   return (
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
-      <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
+      <div className="flex items-center rounded-b-xl bg-[#f51b1b] p-2 justify-between">
         <h1 className=" text-4xl mx-auto"> Add item </h1>
         {/* <h1 className="text-3xl">Total Price : $</h1> */}
       </div>
@@ -133,7 +132,7 @@ const Additem = () => {
           </div>
           
             <button className=" bg-[#337357] rounded text-white hover:rounded-full p-2 felx items-center gap-2"  >
-            Add Items 
+            Add Items
             <EmojiEmotionsIcon></EmojiEmotionsIcon>
           </button>
             
