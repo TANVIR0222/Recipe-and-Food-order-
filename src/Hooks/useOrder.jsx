@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "./useAxiosPublic";
 
 const useOrder = () => {
-    const [loading, setLoading] = useState(true);
-    const [orders, setOrders] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3000/order')
-        .then(response => response.json())
-        .then(data => {
-            setOrders(data);
-            setLoading(false);
-        })
-    }, []);
+    
+    const axiosPublic = useAxiosPublic();
 
-    return[orders,loading]
+    const {data : order = [] , isPending: loading ,refetch} = useQuery({
+        queryKey: ['order'],
+        queryFn: async () => {
+            const res = await axiosPublic.get('/order')
+            return res.data;
+        }
+    })
+
+    return[order,loading,refetch]
 };
 
 export default useOrder;
