@@ -24,7 +24,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
   return (
-    <div>
+    <div className="max-h-20">
       <Box>
         <AppBar sx={{ marginLeft: 5 }}>
           <Toolbar>
@@ -39,7 +39,7 @@ const Dashboard = () => {
       </Box>
       <div className="flex">
         <div className="w-72 mt-20 flex flex-col gap-5  shadow-lg shadow-rose-400 ">
-          <div className="w-72  flex  flex-col gap-5  text-left min-h-screen">
+          <div className="w-72  flex  flex-col gap-5  text-left 	">
             {
               isAdmin ? <>
               <span className=" mt-5 rounded">
@@ -190,7 +190,7 @@ const Dashboard = () => {
               </NavLink>
             </span>
             <span className=" rounded">
-              <NavLink to="/order/:category'">
+              <NavLink to="/order'">
                 {" "}
                 <span className="mr-3   text-center">
                   <MenuIcon
