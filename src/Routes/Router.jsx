@@ -18,6 +18,8 @@ import ManegeItems from "../components/pages/Dashboard/manegeItems/ManegeItems";
 import Update from "../components/pages/Dashboard/update/Update";
 import Payment from "../components/pages/Dashboard/Payment/Payment";
 import PaymentHistroy from "../components/pages/Dashboard/PaymentHistroy/PaymentHistroy";
+import AdminHome from "../components/pages/Dashboard/AdminHome/AdminHome";
+import Userhome from "../components/pages/Dashboard/userHome/Userhome";
 
 
 export const router = createBrowserRouter([
@@ -69,6 +71,10 @@ export const router = createBrowserRouter([
           path:'paymentHistory',
           element:<PaymentHistroy></PaymentHistroy>
         },
+        {
+          path:'home',
+          element:<Userhome></Userhome>
+        },
 
         // admin Route
         {
@@ -87,6 +93,10 @@ export const router = createBrowserRouter([
           path:'update/:id',
           element:<AdminRoute><Update></Update></AdminRoute>,
           loader: ({params}) => fetch(`http://localhost:3000/order/${params.id}`)
+        },
+        {
+          path:'adminHome',
+          element:<AdminHome></AdminHome>
         }
 
       ]
