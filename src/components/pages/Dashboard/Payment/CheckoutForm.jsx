@@ -67,7 +67,6 @@ const CheckoutForm = () => {
     } else {
       if (paymentIntent.status === "succeeded") {
         setTransactiosid(paymentIntent.id);
-
         // now save data database
         const payment = {
           email: user.email,
