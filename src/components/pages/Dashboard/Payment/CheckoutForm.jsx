@@ -75,6 +75,7 @@ const CheckoutForm = () => {
           cartId: cart.map((item) => item._id),
           menuItemid: cart.map((item) => item.menuId),
           transactiosid: paymentIntent.id,
+          is:'panding'
         };
 
         const res = await axiosSecure.post("/payments", payment);

@@ -61,7 +61,7 @@ const Allusers = () => {
   return (
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
-        <h1 className="text-3xl">Total User : {users.length}  </h1>
+        <h1 className="text-3xl mx-auto text-white font-semibold ">Total User : {users.length}  </h1>
         {/* <h1 className="text-3xl">Total Price : $</h1> */}
         <Button variant="contained">Pay</Button>
       </div>

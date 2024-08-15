@@ -1,15 +1,13 @@
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PaymentIcon from "@mui/icons-material/Payment";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
-import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
 import MenuIcon from "@mui/icons-material/Menu";
 import EmailIcon from "@mui/icons-material/Email";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import SortIcon from '@mui/icons-material/Sort';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useCarts from "../Hooks/useCarts";
 import { Divider } from "@mui/material";
 
@@ -24,7 +22,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
   return (
-    <div className="max-h-20">
+    <div className="min-h-screen rounded-md">
       <Box>
         <AppBar sx={{ marginLeft: 5 }}>
           <Toolbar>
@@ -37,7 +35,7 @@ const Dashboard = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <div className="flex">
+      <div className="flex ">
         <div className="w-72 mt-20 flex flex-col gap-5  shadow-lg shadow-rose-400 ">
           <div className="w-72  flex  flex-col gap-5  text-left 	">
             {
@@ -78,17 +76,7 @@ const Dashboard = () => {
                 Manage items
               </NavLink>
             </span>
-            <span className="rounded">
-              <NavLink to="/dashboard/booking">
-                <span className="mr-3     text-center">
-                  <PaymentIcon
-                    color="primary"
-                    sx={{ fontSize: 30, marginLeft: 3 }}
-                  />
-                </span>
-                Manage booking
-              </NavLink>
-            </span>
+
             <span className="   rounded">
               <NavLink to="/dashboard/users">
                 <span className="mr-3    text-center">
@@ -116,17 +104,7 @@ const Dashboard = () => {
               </NavLink>
             </span>
 
-            <span className="   rounded">
-              <NavLink to="/dashboard/reservation">
-                <span className="mr-3    text-center">
-                  <CalendarMonthIcon
-                    color="primary"
-                    sx={{ fontSize: 30, marginLeft: 3 }}
-                  />
-                </span>
-                reservation
-              </NavLink>
-            </span>
+            
             <span className="   rounded">
               <NavLink to="/dashboard/paymentHistory">
                 <span className="mr-3     text-center">
@@ -160,17 +138,7 @@ const Dashboard = () => {
                 add review
               </NavLink>
             </span>
-            <span className="   rounded">
-              <NavLink to="/dashboard/payment">
-                <span className="mr-3    text-center">
-                  <BookmarkAddedIcon
-                    color="primary"
-                    sx={{ fontSize: 30, marginLeft: 3 }}
-                  />
-                </span>
-                my Booking
-              </NavLink>
-            </span>
+            
               </>
             }
 
@@ -189,8 +157,9 @@ const Dashboard = () => {
                 Home{" "}
               </NavLink>
             </span>
+            <Link  >
             <span className=" rounded">
-              <NavLink to="/order'">
+              <NavLink to={'/order'} >
                 {" "}
                 <span className="mr-3   text-center">
                   <MenuIcon
@@ -201,6 +170,7 @@ const Dashboard = () => {
                 Menu{" "}
               </NavLink>
             </span>
+            </Link>
             <span className=" rounded">
               <NavLink to="/contact">
                 {" "}

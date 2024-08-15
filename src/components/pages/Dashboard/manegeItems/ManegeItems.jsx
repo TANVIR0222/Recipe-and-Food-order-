@@ -35,7 +35,7 @@ const ManegeItems = () => {
   return (
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className=" mx-auto rounded-b-xl bg-[#6EACDA] p-2 ">
-        <h1 className="text-3xl mx-auto">Total Item : {order.length} </h1>
+        <h1 className="text-3xl mx-auto text-white font-semibold ">Total Item : {order.length} </h1>
       </div>
       <div className=" my-10 overflow-x-auto">
         <table className="table">
