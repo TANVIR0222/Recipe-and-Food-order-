@@ -54,7 +54,7 @@ const Additem = () => {
   return (
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#f51b1b] p-2 justify-between">
-        <h1 className=" text-4xl mx-auto"> Add item </h1>
+        <h1 className=" text-4xl mx-auto text-white font-semibold"> Add Item </h1>
         {/* <h1 className="text-3xl">Total Price : $</h1> */}
       </div>
       <div className="p-4 ">
