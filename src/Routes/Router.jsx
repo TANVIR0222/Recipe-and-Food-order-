@@ -21,6 +21,7 @@ import PaymentHistroy from "../components/pages/Dashboard/PaymentHistroy/Payment
 import AdminHome from "../components/pages/Dashboard/AdminHome/AdminHome";
 import Userhome from "../components/pages/Dashboard/userHome/Userhome";
 import UseReview from "../components/pages/Dashboard/useReview/UseReview";
+import About from "../components/pages/About/About";
 
 
 export const router = createBrowserRouter([
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
         {
           path:'/checkout/:id',
           element: <Viewpage></Viewpage>,
-          loader:({params}) => fetch(`http://localhost:3000/ordermenu/${params.id}`)
+          loader:({params}) => fetch(`http://localhost:3000/recipeMenu/${params.id}`)
         },
         {
           path:'/singin',
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
         {
           path:'/singup',
           element:<Singup></Singup>
+        },
+        {
+          path:'/contact',
+          element:<About></About>
         }
       ]
     },

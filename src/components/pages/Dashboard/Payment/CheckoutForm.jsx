@@ -7,6 +7,9 @@ import useAuth from "../../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+
+// https://dashboard.stripe.com/test/payments
+
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();

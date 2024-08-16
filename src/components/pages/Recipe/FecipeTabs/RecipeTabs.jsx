@@ -3,24 +3,11 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import RecipeCard from "../../Home/RecipeList/RecipeCard";
-import { useParams } from "react-router-dom";
 import useRecipe from "../../../../Hooks/useRecipe";
 
 const RecipeTabs = () => {
-  // const [menu, setMenu] = useState([]);
 
-  const categorise = [
-    "Entrees",
-    "Breakfast",
-    "Lunch",
-    "Desserts",
-    "Sides",
-    "Drinks",
-  ];
-  const { categoey } = useParams();
-  const inatialIndex = categorise.indexOf(categoey);
-
-  const [value, setValue] = React.useState(inatialIndex);
+  const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -32,6 +19,7 @@ const RecipeTabs = () => {
   const Desserts = menu.filter((item) => item.category === "Desserts");
   const Sides = menu.filter((item) => item.category === "Sides");
   const Drinks = menu.filter((item) => item.category === "Drinks");
+
 
   return (
     <div>

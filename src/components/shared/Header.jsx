@@ -33,7 +33,7 @@ const Header = () => {
   }));
   return (
     <div className="">
-      <Navbar fluid rounded className="bg-slate-100 z-10">
+      <Navbar className=" z-10  bg-opacity-30 mx-auto text-white bg-black" fluid rounded >
         <Navbar.Brand href="/">
           <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
         </Navbar.Brand>
@@ -92,13 +92,13 @@ const Header = () => {
           >
             <Link to={"/order"}>Order Now</Link>
           </Navbar.Link>
-          <Navbar.Link
+          {/* <Navbar.Link
             className="text-md  uppercase"
             active={usePath == "/about"}
             as={"div"}
           >
             <Link to={"/about"}>About</Link>
-          </Navbar.Link>
+          </Navbar.Link> */}
           <Navbar.Link
             className="text-md  uppercase"
             active={usePath == "/about"}
