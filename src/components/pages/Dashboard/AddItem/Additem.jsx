@@ -4,6 +4,7 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=e5c85096683e3ea5d78a598b6741529e`
@@ -52,6 +53,10 @@ const Additem = () => {
   }
 
   return (
+    <>
+    <Helmet>
+    <title>Add items</title>
+    </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#f51b1b] p-2 justify-between">
         <h1 className=" text-4xl mx-auto text-white font-semibold"> Add Item </h1>
@@ -139,6 +144,8 @@ const Additem = () => {
         </form>
       </div>
     </div>
+    </>
+
   );
 };
 
