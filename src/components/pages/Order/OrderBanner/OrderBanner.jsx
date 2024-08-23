@@ -1,7 +1,7 @@
 const OrderBanner = () => {
   return (
     <div>
-      <img className="w-full" src="orderBanner.jpg" alt="order now" />
+      <img className="w-full h-96		 " src="orderlogo.jpg" alt="order now" />
     </div>
   );
 };

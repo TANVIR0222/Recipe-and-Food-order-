@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import PieCharts from "../Adminchart/PieCharts";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -17,6 +18,10 @@ const AdminHome = () => {
     },
   });
   return (
+    <>
+    <Helmet>
+      <title>Admin Home</title>
+    </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center  rounded-b-xl bg-[#6EACDA] h-14 justify-between">
         <h1 className="text-3xl mx-auto text-white font-semibold ">Admin Dashboard </h1>
@@ -45,6 +50,7 @@ const AdminHome = () => {
       </div>
      <PieCharts></PieCharts>
     </div>
+    </>
   );
 };
 

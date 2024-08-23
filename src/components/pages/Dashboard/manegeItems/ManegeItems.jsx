@@ -4,6 +4,7 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const ManegeItems = () => {
   const [order, , refetch] = useOrder();
   const axiosSecure = useAxiosSecure();
@@ -33,6 +34,10 @@ const ManegeItems = () => {
     });
   };
   return (
+    <>
+    <Helmet>
+      <title>Manage items </title>
+    </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className=" mx-auto rounded-b-xl bg-[#6EACDA] p-2 ">
         <h1 className="text-3xl mx-auto text-white font-semibold ">Total Item : {order.length} </h1>
@@ -95,6 +100,8 @@ const ManegeItems = () => {
         </table>
       </div>
     </div>
+    </>
+
   );
 };
 

@@ -5,6 +5,7 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=e5c85096683e3ea5d78a598b6741529e`
 
@@ -54,6 +55,11 @@ const Update = () => {
 
 
     return (
+      <>
+      <Helmet>
+        <title>Update items</title>
+      </Helmet>
+
         <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
         <h1 className=" text-4xl mx-auto"> Update item </h1>
@@ -145,6 +151,8 @@ const Update = () => {
         </form>
       </div>
     </div>
+    </>
+
     );
 };
 

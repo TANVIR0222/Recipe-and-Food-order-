@@ -1,62 +1,79 @@
 import { Textarea } from "flowbite-react";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+
 const About = () => {
-    const text = "Say Hello";
+  //
+  //
+  //  public key
+  const text = "Say Hello";
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
   const form = useRef();
-    const sendEmail = (e) => {
-        e.preventDefault();
-        // setError(false);
-        // setSuccess(false);
-    
-        // // emailjs.sendForm(
-        // //     process.env.NEXT_PUBLIC_SURVICE_ID,
-        // //     process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        // //     form.current,
-        // //     process.env.NEXT_PUBLIC_PUBLIC_KEY
-        // //   )
-        //   .then(
-        //     () => {
-        //       setSuccess(true);
-        //       form.current.reset();
-        //     },
-        //     () => {
-        //       setError(true);
-        //     }
-        //   );
-      };
-    return (
-        <motion.div
-      className="h-full"
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%" }}
-      transition={{ duration: 1.5 }}
-    >
-      <div className=" text-black h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ">
-        {/* Text container */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 text-6xl flex items-center justify-center ">
-          <div>
-            {text.split("").map((letter, index) => (
-              <motion.samp
-                key={index}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: index * 0.1,
-                }}
-              >
-                {letter}
-              </motion.samp>
-            ))}
-            😊
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
+    emailjs
+      .sendForm("service_mxdjlru", "template_ry023r8", form.current, {
+        publicKey: "QcGEu9QKfFP48mKbT",
+      })
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+          
+        },
+        () => {
+          setError(true);
+        }
+      );
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Thank You",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>Contact </title>
+      </Helmet>
+      <motion.div
+        className="h-full"
+        initial={{ y: "-200vh" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 1.5 }}
+      >
+        <div className="text-black h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 ">
+          {/* Text container */}
+          <div className="h-1/2 lg:h-full lg:w-1/2 text-6xl flex items-center justify-center ">
+            <div>
+              {text.split("").map((letter, index) => (
+                <motion.samp
+                  key={index}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 0 }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.1,
+                  }}
+                >
+                  {letter}
+                </motion.samp>
+              ))}
+              😊
+            </div>
           </div>
-        </div>
-        {/* From container */}
+          {/* From container */}
           <form
             onSubmit={sendEmail}
             ref={form}
@@ -91,9 +108,10 @@ const About = () => {
               </span>
             )}
           </form>
-      </div>
-    </motion.div>
-    );
+        </div>
+      </motion.div>
+    </>
+  );
 };
 
 export default About;

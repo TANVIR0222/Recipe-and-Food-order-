@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const PaymentHistroy = () => {
     const {user } = useAuth();
@@ -15,6 +16,10 @@ const PaymentHistroy = () => {
         }
     })
   return (
+    <>
+    <Helmet>
+      <title>Payment Histroy</title>
+    </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
         <h1 className="text-3xl mx-auto">Payment Histroy</h1>
@@ -48,6 +53,7 @@ const PaymentHistroy = () => {
         </table>
       </div>
     </div>
+    </>
   );
 };
 

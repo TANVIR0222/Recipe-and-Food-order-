@@ -1,12 +1,11 @@
-import { Button, Checkbox, Label, Textarea, TextInput } from "flowbite-react";
-import { useState } from "react";
-import { Rating } from "@smastrom/react-rating";
+import { Button, Label, Textarea, TextInput } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+
 
 const UseReview = () => {
-  const [rating, setRating] = useState(0);
   const axiosPublic = useAxiosPublic();
   const {
     register,
@@ -32,6 +31,11 @@ const UseReview = () => {
     }
   };
   return (
+    <>
+    <Helmet>
+    <title>Reviews</title>
+    </Helmet>
+
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center  rounded-b-xl bg-[#6EACDA] h-14 justify-between">
         <h1 className="text-2xl mx-auto font-bold text-white">Reviews</h1>
@@ -69,6 +73,8 @@ const UseReview = () => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 

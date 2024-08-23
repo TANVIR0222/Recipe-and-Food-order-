@@ -31,11 +31,12 @@ const Header = () => {
       padding: "0 4px",
     },
   }));
+
   return (
-    <div className="">
-      <Navbar className=" z-10  bg-opacity-30 mx-auto text-white bg-black" fluid rounded >
+    <div>
+      <Navbar className= "navbar z-10 bg-opacity-30 max-w-screen-xl bg-white text-white" >
         <Navbar.Brand href="/">
-          <span className="text-2xl  uppercasefont-bold">Recipe and Food</span>
+          <span className="text-2xl text-red-500  font-bold">Recipe & Food</span>
         </Navbar.Brand>
         <div className="flex md:order-2">
         {
@@ -92,13 +93,6 @@ const Header = () => {
           >
             <Link to={"/order"}>Order Now</Link>
           </Navbar.Link>
-          {/* <Navbar.Link
-            className="text-md  uppercase"
-            active={usePath == "/about"}
-            as={"div"}
-          >
-            <Link to={"/about"}>About</Link>
-          </Navbar.Link> */}
           <Navbar.Link
             className="text-md  uppercase"
             active={usePath == "/about"}
@@ -106,7 +100,6 @@ const Header = () => {
           >
             <Link to={"/contact"}>Contact</Link>
           </Navbar.Link>
-          
         </Navbar.Collapse>
       </Navbar>
     </div>

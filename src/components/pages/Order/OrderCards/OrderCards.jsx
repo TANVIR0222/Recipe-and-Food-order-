@@ -60,9 +60,9 @@ const OrderCards = ({items}) => {
     return (
         <div className=" leading-6">
           <Card
-          className="mx-2 my-2 md:my-10 hover:shadow-xl hover:shadow-blue-600"
+          className="mx-2 h-[450px] my-2 md:my-10 hover:shadow-xl hover:shadow-blue-600"
           renderImage={() => (
-            <img width={500} height={500} src={image} alt="image 1" />
+            <img className="w-full" src={image} alt="image 1" />
           )}
         >
           <div className="flex items-center justify-between">

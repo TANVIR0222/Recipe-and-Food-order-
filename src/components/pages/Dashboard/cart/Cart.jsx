@@ -3,6 +3,7 @@ import useCarts from "../../../../Hooks/useCarts";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
   const [cart,refetch] = useCarts();
@@ -40,7 +41,11 @@ const Cart = () => {
   }
 
   return (
+    <><Helmet>
+    <title>Cart</title>
+  </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
+      
       <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
         <h1 className="text-3xl">Total Item  :  {cart.length}</h1>
         <h1 className="text-3xl">Total Price : ${totalPrice}</h1>
@@ -96,6 +101,7 @@ const Cart = () => {
       </div>
       
     </div>
+    </>
   );
 };
 

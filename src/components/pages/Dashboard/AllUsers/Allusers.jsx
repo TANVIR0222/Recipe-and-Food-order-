@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Allusers = () => {
   const axiosSecure = useAxiosSecure();
@@ -59,6 +60,10 @@ const Allusers = () => {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>All Users</title>
+    </Helmet>
     <div className="mt-10 border-2 border-gray-300 min-h-screen">
       <div className="flex items-center rounded-b-xl bg-[#6EACDA] p-2 justify-between">
         <h1 className="text-3xl mx-auto text-white font-semibold ">Total User : {users.length}  </h1>
@@ -110,6 +115,7 @@ const Allusers = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
