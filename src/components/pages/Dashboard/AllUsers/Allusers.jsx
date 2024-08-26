@@ -87,8 +87,8 @@ const Allusers = () => {
               {users.map((user, index) => (
                 <tr key={user._id}>
                   <th>{index + 1}</th>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
+                  <td>{user?.name}</td>
+                  <td>{user?.email}</td>
                   <td>
                     {
                       user.role === 'admin' ? 'Admin' : <Button
